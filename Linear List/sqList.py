@@ -13,7 +13,6 @@ class SqList(object):
         self.listItem = [None] * self.maxSize       # 顺序表的存储空间
 
     def clear(self):
-
         """将线性表置空"""
         self.curLen = 0
 
@@ -27,7 +26,7 @@ class SqList(object):
 
     def get(self, i):
         """读取并返回线性表中的第i个数据元素"""
-        if i < 0 or i > self.curLen -1:
+        if i < 0 or i > self.curLen - 1:
             raise Exception("第i个元素不存在")
         return self.listItem[i]
 
@@ -44,7 +43,7 @@ class SqList(object):
 
     def remove(self, i):
         """删除第i个元素"""
-        if i < 0 or i > self.curLen -1:
+        if i < 0 or i > self.curLen - 1:
             raise Exception("---删除位置非法---")
         for j in range(self.curLen):
             self.listItem[j] = self.listItem[j + 1]
@@ -61,3 +60,9 @@ class SqList(object):
         """输出线性表中各元素的值"""
         for i in range(self.curLen):
             print(self.listItem[i], end='')
+
+
+if __name__ == '__main__':
+     L = SqList(26)
+     for i in range(26):
+         L.insert(i, chr(ord('a')+i))
